@@ -8,19 +8,25 @@
 """
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+os.environ["PYTHONIOENCODING"] = "utf-8"
+
 
 def main() -> None:
     root_dir = Path(__file__).resolve().parent.parent
-    print("🔍 [Local CL Pre-Commit Gate] 正在執行 Agy 2.0 Headless 6-Harness 本地提交前自檢...")
+    print("🔍 [Local CL Pre-Commit Gate] 正在執行 Agy 2.0 Headless 6-Harness 本地提交前自檢...", flush=True)
 
     proc = subprocess.run(
         [sys.executable, str(root_dir / "scripts" / "agy_sdk_headless_runner.py"), "--gate-mode", "observer"],
         capture_output=True,
         text=True,
+        encoding="utf-8",
         cwd=str(root_dir),
     )
     if proc.returncode != 0:

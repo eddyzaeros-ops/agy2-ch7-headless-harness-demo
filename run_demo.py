@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent
 def banner(title: str) -> None:
     print("\n" + "=" * 74)
     print(f" 🎯 {title}")
-    print("=" * 74)
+    print("=" * 74, flush=True)
 
 
 def main() -> None:
