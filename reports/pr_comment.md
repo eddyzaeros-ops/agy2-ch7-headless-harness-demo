@@ -31,4 +31,4 @@
 | **🚨 CRITICAL** | `SUBAGENT-ATTACK-CHAIN-001` | `src/order_service.py:34` | `Subagent:pci-compliance-auditor (Negative Unit Test Verification)` | 子代理執行負向安全測試 `test_sql_injection_resilience` 時證實攻擊鏈可被觸發：傳入惡意載荷 `' OR '1'='1` 至 `get_order_by_id()` 時，成功繞過驗證並洩漏第一筆訂單記錄！ | 立即將 `get_order_by_id()` 第 34 行的 f-string 查詢改為參數化查詢，並重新執行 `pytest` / `unittest`。 |
 
 ---
-*📊 **Headless 執行審計元數據**：Session ID: `agy2-headless-20261101-032809` | 交互輪數 (`num_turns`): `5` | 耗時 (`duration_ms`): `1243 ms` | 預估成本 (`total_cost_usd`): `$0.0285 USD`*
+*📊 **Headless 執行審計元數據**：Session ID: `agy2-headless-20261101-035028` | 交互輪數 (`num_turns`): `5` | 耗時 (`duration_ms`): `1332 ms` | 預估成本 (`total_cost_usd`): `$0.0285 USD`*

@@ -1,10 +1,10 @@
 {
   "type": "result",
   "subtype": "success",
-  "session_id": "agy2-headless-20261101-032809",
+  "session_id": "agy2-headless-20261101-035028",
   "is_error": false,
-  "duration_ms": 1243,
-  "duration_api_ms": 1193,
+  "duration_ms": 1332,
+  "duration_api_ms": 1282,
   "num_turns": 5,
   "total_cost_usd": 0.0285,
   "usage": {
@@ -18,7 +18,7 @@
       "injectSteps": [
         {
           "systemMessage": {
-            "systemMessage": "[Hook:SessionStart] 已啟動 Agy 2.0 Headless 受控環境 (session=agy2-headless-20261101-032809, model=gemini-4-argon-headless)。提醒：1. 必須啟用 `payment-security-audit` 技能 2. 必須呼叫 `sqlite-schema-mcp` 核對資料庫真實欄位 3. 嚴禁修改 `.env` 或 `src/db/schema.sql`。"
+            "systemMessage": "[Hook:SessionStart] 已啟動 Agy 2.0 Headless 受控環境 (session=agy2-headless-20261101-035028, model=gemini-4-argon-headless)。提醒：1. 必須啟用 `payment-security-audit` 技能 2. 必須呼叫 `sqlite-schema-mcp` 核對資料庫真實欄位 3. 嚴禁修改 `.env` 或 `src/db/schema.sql`。"
           }
         }
       ]
