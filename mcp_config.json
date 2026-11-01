@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "sqlite-schema-mcp": {
+      "command": "python",
+      "args": ["mcp_servers/sqlite_schema_mcp.py"],
+      "env": {
+        "SCHEMA_SQL_PATH": "src/db/schema.sql",
+        "DB_READONLY": "true"
+      }
+    }
+  }
+}

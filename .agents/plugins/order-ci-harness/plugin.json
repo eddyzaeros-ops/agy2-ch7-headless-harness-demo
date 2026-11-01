@@ -1,0 +1,7 @@
+{
+  "name": "order-ci-harness",
+  "author": {
+    "name": "Antigravity 2.0 Chapter 7 Demo"
+  },
+  "description": "Bundles Rules, Payment Security Audit Skill, SQLite Schema MCP Server, and Lifecycle Hooks into a single deployable Agy 2.0 Plugin unit."
+}

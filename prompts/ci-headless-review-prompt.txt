@@ -1,0 +1,8 @@
+請針對當前 CL / PR 的程式碼變更（重點檔案：`src/order_service.py`）執行完整的無頭（Headless）安全與架構審查：
+
+1. 【Rules 遵循】：嚴格依據根目錄 `GEMINI.md` 與 `AGENTS.md` 之金融安全規範進行判定。
+2. 【Skill 執行】：立即啟用 `payment-security-audit` 技能，先執行 `.agents/skills/payment-security-audit/scripts/ast_pci_scanner.py src/` 取得 AST 靜態分析結果。
+3. 【MCP 真實 Schema 驗證】：呼叫 `sqlite-schema-mcp` 伺服器的 `get_table_schema` 工具，驗證 `src/order_service.py` 中針對 `orders` 與 `payments` 資料表的 SQL 欄位（如 `total_price`, `card_cvv`）是否與 `src/db/schema.sql` 真實結構一致。
+4. 【Sub-agent 委派】：委派 `pci-compliance-auditor`（或 `research` 子代理）分析 `tests/test_order_service.py` 的測試覆蓋缺口與 SQL Injection 攻擊鏈。
+5. 【Hooks 受控】：全程遵守 `.agents/hooks.json` 之 `PreToolUse` 安全攔截與 `PostToolUse` 審計日誌規範。
+6. 【結構化輸出】：最終輸出必須 100% 符合 `schemas/cl_review_report.schema.json`。
