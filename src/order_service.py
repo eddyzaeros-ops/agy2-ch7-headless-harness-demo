@@ -80,3 +80,5 @@ class OrderPaymentService:
             order_dict["payments"] = [dict(p) for p in payments]
             results.append(order_dict)
         return results
+
+# CL/PR Trigger: Submit OrderPaymentService for Agy 2.0 Headless 6-Harness CI Audit
